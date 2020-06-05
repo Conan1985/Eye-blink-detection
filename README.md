@@ -9,3 +9,7 @@ From the last project - Detecting facial landmarks - we know that we can apply f
 ### How to run:
 Download or clone this repository on your local device and run the following command in the terminal while being in the Eye-blink-detection folder -  `python detect_blinks.py`. If there's any package/module missing, you can easily install them using the `pip` command.
 python3 detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat
+
+### USAGE
+- python3 detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat --video blink_detection_demo.mp4
+- python3 detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat
