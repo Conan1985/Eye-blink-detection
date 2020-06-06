@@ -98,6 +98,7 @@ while True:
 	# Show each frame after the above process
 	cv2.imshow("Eye Blink Detection", frame)
 
+	# Click space key to stop video
 	key = cv2.waitKey(1) & 0xFF
 	if key == ord(" "):
 		break
