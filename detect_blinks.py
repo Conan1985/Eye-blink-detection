@@ -1,5 +1,5 @@
 from scipy.spatial import distance as dist
-from imutils.video import FileVideoStream
+from imutils.video import FileVideoStream, VideoStream
 from imutils import face_utils
 import argparse
 import imutils
@@ -40,23 +40,23 @@ predictor = dlib.shape_predictor(args["shape_predictor"])
 (rightStart, rightEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
 # Uncomment the following two lines for video
-vs = FileVideoStream(args["video"]).start()
-fileStream = True
+# vs = FileVideoStream(args["video"]).start()
+# fileStream = True
 
 # Uncomment the following two lines for camera
-# vs = VideoStream(src=0).start()
-# fileStream = False
+vs = VideoStream(src=0).start()
+fileStream = False
 
 # While reading the video stream
 while True:
 	# The break condition: video ends
 	if fileStream and not vs.more():
 		break
-	# Read and transfer each frame into gray picture
+	# Read and transfer each frame into gray scale figure
 	frame = vs.read()
-	frame = imutils.resize(frame, width=450)
+	frame = imutils.resize(frame, width=500)
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-	# Detect rects coordinates in gray picture
+	# Detect rects coordinates in gray scale figure
 	rects = detector(gray, 0)
 	for rect in rects:
 		# Find all shapes
